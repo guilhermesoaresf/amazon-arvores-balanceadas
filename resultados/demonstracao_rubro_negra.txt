@@ -1,0 +1,30 @@
+Sistema de encomendas - Arvores balanceadas
+1 - AVL
+2 - Rubro-Negra
+Escolha: 
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: Identificador inteiro: Inserido.
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: Identificador inteiro: Inserido.
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: Identificador inteiro: Inserido.
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: Arvore de lado (raiz a esquerda; direita acima):
+    30 [V]
+20 [P]
+    10 [V]
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: Identificador inteiro: Encontrado.
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: Identificador inteiro: Removido.
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: 10 20 
+
+1 Inserir | 2 Buscar | 3 Remover | 4 Em ordem | 5 Visualizar | 6 Estatisticas | 0 Sair
+Opcao: 

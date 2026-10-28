@@ -1,0 +1,13 @@
+cenario,etapa,arvore,altura,rotacoes_acumuladas,ajustes_acumulados
+crescente,apos insercao,AVL,10,990,990
+crescente,apos insercao,Rubro-Negra,17,983,4909
+crescente,apos 500 remocoes,AVL,10,1238,1238
+crescente,apos 500 remocoes,Rubro-Negra,15,1232,6403
+decrescente,apos insercao,AVL,10,990,990
+decrescente,apos insercao,Rubro-Negra,17,983,4909
+decrescente,apos 500 remocoes,AVL,10,1238,1238
+decrescente,apos 500 remocoes,Rubro-Negra,15,1232,6403
+embaralhado,apos insercao,AVL,12,662,444
+embaralhado,apos insercao,Rubro-Negra,12,564,2313
+embaralhado,apos 500 remocoes,AVL,11,874,595
+embaralhado,apos 500 remocoes,Rubro-Negra,11,790,3355

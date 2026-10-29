@@ -30,6 +30,8 @@ A opção de estatísticas informa altura, rotações acumuladas e validação. 
 
 `make test` verifica ordem e propriedades após operações: ordem de busca, alturas e fator de balanceamento na AVL; raiz e sentinela pretas, ausência de filhos vermelhos de nós vermelhos, mesma altura negra e ponteiros de pais na Rubro-Negra. Inclui árvores vazias e unitárias, duplicados, buscas e remoções inexistentes, remoção de folhas e nós com um ou dois filhos e 20.000 operações pseudaleatórias por árvore comparadas com `std::set` apenas como referência de teste.
 
+Os quatro casos de rotação da AVL e as remoções isoladas de folha, nó com um filho e nó com dois filhos também possuem testes próprios.
+
 O experimento usa 1.000 identificadores em ordem crescente, decrescente e embaralhada (gerador `mt19937` com semente 42). Em cada cenário, insere todos e remove os primeiros 500 da mesma sequência. Os totais no CSV são acumulados desde o início. Execute `./testes > resultados/comparacao.csv` após `make testes` para reproduzir. O embaralhamento pode variar entre implementações da biblioteca padrão, apesar da mesma semente; os dados registrados correspondem ao ambiente usado na execução.
 
 Nos resultados registrados, após as inserções ordenadas, as alturas foram 10 na AVL e 17 na Rubro-Negra. Na sequência embaralhada, ambas ficaram com altura 12; a AVL fez 662 rotações e a Rubro-Negra, 564. Após as remoções, os valores aparecem em `resultados/comparacao.csv`.
@@ -41,3 +43,7 @@ Para este protótipo, se a prioridade for limitar a altura para buscas, a AVL é
 - Enunciado da atividade, IMD0039, Trabalho da Unidade II.
 - Cormen, Leiserson, Rivest e Stein. *Introduction to Algorithms*, 3ª ed., capítulos sobre árvores de busca e árvores Rubro-Negras.
 - Open Data Structures, capítulo sobre árvores de busca balanceadas: https://opendatastructures.org/
+
+## Apresentação
+
+A versão revisada da apresentação está em `output/apresentacao-revisada.pdf`, com o arquivo editável em `output/apresentacao-revisada.pptx`.

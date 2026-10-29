@@ -28,6 +28,7 @@ class AVL : public Arvore {
     void atualizar(No* n) { n->altura = 1 + std::max(h(n->esq), h(n->dir)); }
     No* direita(No* y) { No* x=y->esq; y->esq=x->dir; x->dir=y; atualizar(y); atualizar(x); ++rotacoes; return x; }
     No* esquerda(No* x) { No* y=x->dir; x->dir=y->esq; y->esq=x; atualizar(x); atualizar(y); ++rotacoes; return y; }
+    // Atualiza a altura e corrige os quatro casos de desequilibrio.
     No* balancear(No* n) {
         if (!n) return n;
         atualizar(n); int f=h(n->esq)-h(n->dir);
@@ -49,6 +50,7 @@ class AVL : public Arvore {
         else {
             ok=true;
             if (!n->esq || !n->dir) { No* filho=n->esq ? n->esq : n->dir; delete n; return filho; }
+            // Com dois filhos, usamos o sucessor (menor valor da subarvore direita).
             No* s=n->dir; while (s->esq) s=s->esq;
             n->valor=s->valor; bool ignorado=false; n->dir=remover(n->dir,s->valor,ignorado);
         }
@@ -82,6 +84,7 @@ class RubroNegra : public Arvore {
     void esquerda(No* x) { No* y=x->dir; x->dir=y->esq; if(y->esq!=nil) y->esq->pai=x; y->pai=x->pai; if(x->pai==nil) raiz=y; else if(x==x->pai->esq) x->pai->esq=y; else x->pai->dir=y; y->esq=x; x->pai=y; ++rotacoes; }
     void direita(No* y) { No* x=y->esq; y->esq=x->dir; if(x->dir!=nil) x->dir->pai=y; x->pai=y->pai; if(y->pai==nil) raiz=x; else if(y==y->pai->dir) y->pai->dir=x; else y->pai->esq=x; x->dir=y; y->pai=x; ++rotacoes; }
     void cor(No* n, Cor c) { if(n!=nil && n->cor!=c){ n->cor=c; ++ajustes; } }
+    // Se pai e tio sao vermelhos, muda cores; caso contrario, usa rotacao.
     void corrigirInsercao(No* z) {
         while(z->pai->cor==VERMELHO) {
             if(z->pai==z->pai->pai->esq) {
@@ -97,6 +100,7 @@ class RubroNegra : public Arvore {
         cor(raiz,PRETO);
     }
     void trocar(No* u, No* v) { if(u->pai==nil) raiz=v; else if(u==u->pai->esq) u->pai->esq=v; else u->pai->dir=v; v->pai=u->pai; }
+    // Repara a perda de um no preto usando o irmao e seus filhos.
     void corrigirRemocao(No* x) {
         while(x!=raiz && x->cor==PRETO) {
             if(x==x->pai->esq) {
@@ -127,6 +131,7 @@ class RubroNegra : public Arvore {
         return e+(n->cor==PRETO);
     }
 public:
+    // Uma unica sentinela preta representa os filhos vazios.
     RubroNegra() { nil=new No; nil->pai=nil->esq=nil->dir=nil; raiz=nil; }
     ~RubroNegra() override { limpar(raiz); delete nil; }
     bool inserir(int v) override {
